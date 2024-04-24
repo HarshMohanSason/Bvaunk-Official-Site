@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About bvaunk page</title>
+
+    <style>
+        body {
+
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            min-height: 100vh;
+            /* Set minimum height to full viewport height */
+            position: relative;
+            /* Set position to relative */
+            padding-bottom: 60px;
+            /* Add padding to the bottom to create space for the footer */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        footer {
+            margin-top: auto;
+
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            /* Include padding in element's total width and height */
+        }
+
+        .footer-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-heading img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .footer-line {
+            border-bottom: 1px solid white;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        footer a+a::before {
+            content: '|';
+            margin-right: 23px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Support</h1>
+    <footer style="text-align: center;">
+        <div class="footer-line"></div>
+        <div class="footer-heading">
+            <h2>B V A U N K</h2>
+        </div>
+        <p style="text-align: center;">&copy; 2024 Bvaunk. All rights reserved.</p>
+        <a href="PrivacyPolicy.html">Privacy Policy</a>
+        <a href="Support.html">Support</a>
+        <p style="text-align: center;">The materials on this website are for illustration and discussion purposes only
+            and do not constitute an offering. An offering may be made only by delivery of a confidential offering
+            memorandum to appropriate investors. PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.</p>
+    </footer>
+</body>
+
+</html>
