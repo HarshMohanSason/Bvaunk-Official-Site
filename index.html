@@ -4,21 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bvaunk offical homepape</title>
+    <title>bvaunk official homepage</title>
     <style>
         body {
-
             display: flex;
             flex-direction: column;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: black;
+            background-color: #222; /* Adjusted to a lighter tone of black */
             color: white;
             min-height: 100vh;
-            /* Set minimum height to full viewport height */
             position: relative;
-            /* Set position to relative */
             padding-bottom: 60px;
         }
 
@@ -32,6 +29,9 @@
 
         main {
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         nav {
@@ -68,9 +68,8 @@
             margin-top: auto;
             bottom: 0;
             width: 100%;
-            padding: 20px;
+            padding: 5px;
             box-sizing: border-box;
-            /* Include padding in element's total width and height */
         }
 
         .footer-heading {
@@ -103,58 +102,28 @@
             margin-right: 23px;
         }
 
-        @media only screen and (max-width: 750px) {
-            .image-container {
-                flex-direction: column;
-                /* Stack the image and text vertically */
-                align-items: center;
-                /* Center the items horizontally */
-                text-align: center;
-                /* Center the text */
-            }
-
-            .image-container img {
-                margin-right: 0;
-                /* Remove right margin for better alignment */
-                margin-bottom: 10px;
-                /* Add bottom margin to separate image and text */
-            }
-        }
-
-
-
         .header {
             display: flex;
-            /* Use flexbox for layout */
             align-items: center;
-            /* Align items vertically */
             justify-content: center;
-            /* Center items horizontally */
         }
 
         .header img {
             width: 30px;
             height: 30px;
             margin-right: 10px;
-            /* Add margin to separate image from text */
         }
 
         .header h1 {
             margin: 0;
-            /* Remove default margin */
-        }
-
-        .image-gallery {
-            display: grid;
-            justify-content: center;
         }
 
         .image-container {
-            display: flex;
-            align-items: center;
             position: relative;
             margin: 10px;
             overflow: hidden;
+            text-align: center;
+            animation: fadeIn 2s ease; 
         }
 
         .image-container img {
@@ -164,31 +133,41 @@
             transition: transform 0.3s ease;
         }
 
+        .info-overlay {
+            animation: fadeInText 2s ease 2s forwards;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
         .image-container:hover img {
             transform: scale(1.05);
-            /* Scale up the image slightly on hover */
         }
 
         .image-container .info-overlay h2,
         .image-container .info-overlay p {
+            padding-top: 20px;
             margin: 0;
-            white-space: nowrap;
-            /* Prevent text from wrapping */
+            white-space: normal;
             overflow: hidden;
-            /* Hide overflowing text */
-            animation: typewriter 2s steps(40) forwards;
-        }
-
-        @keyframes typewriter {
-            from {
-                width: 0;
-                /* Start with 0 width */
-            }
-
-            to {
-                width: 100%;
-                /* End with full width */
-            }
         }
     </style>
 </head>
@@ -198,51 +177,28 @@
         <div class="header">
             <h1>B V A U N K</h1>
         </div>
-
         <nav>
             <a href="About.html">About Us</a>
-            <a href="Contact.html">Contact Us</a>
         </nav>
     </header>
     <main>
         <div class="image-gallery">
             <div class="image-container">
-                <img src="iwthout_bg.png" alt="Image 1">
+                <img src="Images/iwthout_bg.png" alt="Image 1">
                 <div class="info-overlay">
-                    <h2>Title 1</h2>
-                    <p>This is the information about Image 1.</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="Logo.png" alt="Image 2">
-                <div class="info-overlay">
-                    <h2>Title 2</h2>
-                    <p>This is the information about Image 2.</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="C2N_Logo.png" alt="Image 3">
-                <div class="info-overlay">
-                    <h2>Title 3</h2>
-                    <p>This is the information about Image 3.</p>
+                    <h2>Bvaunk</h2>
+                    <p>Bvaunk is a leading global conglomerate, comprising several innovative and dynamic companies at the forefront of their respective industries. With a commitment to excellence, creativity, and sustainability, Bvaunk is dedicated to shaping the future through its diverse portfolio of businesses.</p>
                 </div>
             </div>
         </div>
     </main>
-
-
-
     <footer style="text-align: center;">
         <div class="footer-line"></div>
         <div class="footer-heading">
-            <h2>B V A U N K</h2>
+                  <a href="index.html"><h2>B V A U N K</h2></a>
         </div>
-        <p style="text-align: center;">&copy; 2024 Bvaunk. All rights reserved.</p>
-        <a href="PrivacyPolicy.html">Privacy Policy</a>
-        <a href="Support.html">Support</a>
-        <p style="text-align: center;">The materials on this website are for illustration and discussion purposes
-            only and do not constitute an offering. An offering may be made only by delivery of a confidential
-            offering memorandum to appropriate investors. PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.</p>
+        <p>&copy; 2024 Bvaunk. All rights reserved.</p>
+        <p>The materials on this website are for illustration and discussion purposes only and do not constitute an offering. An offering may be made only by delivery of a confidential offering memorandum to appropriate investors. PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.</p>
     </footer>
 </body>
 

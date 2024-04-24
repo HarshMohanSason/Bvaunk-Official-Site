@@ -18,44 +18,47 @@
             background-color: black;
             color: white;
             min-height: 100vh;
-            /* Set minimum height to full viewport height */
             position: relative;
-            /* Set position to relative */
             padding-bottom: 60px;
-            /* Add padding to the bottom equal to the height of the footer */
+            font-size: 14px;
         }
 
         h1 {
             text-align: center;
+            animation: fadeIn 1s ease forwards; /* Animation for the heading */
+        }
+
+        h2,
+        h3,
+        h4 {
+            text-align: left;
+            margin-bottom: 10px;
+            padding-left: 40px;
+            opacity: 0; /* Set initial opacity to 0 */
         }
 
         h2 {
-            text-align: center;
+            animation: fadeIn 1s ease forwards 0.5s; /* Animation for the first h2 */
         }
 
         h3 {
-            font-size: medium;
+            animation: fadeIn 1s ease forwards 1s; /* Animation for the first h3 */
         }
 
-        h5 {
-
-            margin-bottom: auto
+        h4 {
+            animation: fadeIn 1s ease forwards 1.5s; /* Animation for the first h4 */
         }
 
         .footer-heading {
             display: flex;
-            /* Use flexbox for layout */
             align-items: center;
-            /* Align items vertically */
             justify-content: center;
-            /* Center items horizontally */
         }
 
         .footer-heading img {
             width: 30px;
             height: 30px;
             margin-right: 10px;
-            /* Add margin to separate image from text */
         }
 
         .footer-line {
@@ -65,62 +68,40 @@
 
         footer {
             margin-top: auto;
-
             bottom: 0;
             width: 100%;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
+            text-align: center;
         }
-
+        .footer-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         footer a {
             color: white;
             text-decoration: none;
-            text-align: center;
             position: relative;
             display: inline-block;
             margin: 0 10px;
-            /* Adjust margin as needed */
         }
 
         footer a+a::before {
-            /* Apply style to the ::before pseudo-element of the second anchor */
             content: '|';
-            /* Display a vertical line as divider */
             margin-right: 23px;
-            /* Adjust space between divider and link */
-
         }
 
-        p:not(footer p) {
-            text-align: left;
-            /* Align paragraphs to the left */
-            margin-bottom: 20px;
-            padding-left: 40px;
-            /* Add padding from the left */
-        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                /* Start with 0 opacity */
+            }
 
-        h2:not(footer h2) {
-            text-align: left;
-            /* Align heading to the left */
-            margin-bottom: 10px;
-            padding-left: 40px;
-            /* Add padding from the left */
-        }
-
-        h3:not(footer h3) {
-            text-align: left;
-            /* Align heading to the left */
-            margin-bottom: 10px;
-            padding-left: 40px;
-            /* Add padding from the left */
-        }
-
-        h4:not(footer h4) {
-            text-align: left;
-            /* Align heading to the left */
-            margin-bottom: 10px;
-            padding-left: 40px;
-            /* Add padding from the left */
+            to {
+                opacity: 1;
+                /* End with full opacity */
+            }
         }
     </style>
 </head>
@@ -131,7 +112,7 @@
         their respective industries. With a commitment to excellence, creativity, and sustainability, Bvaunk is
         dedicated to shaping the future through its diverse portfolio of businesses.</h3>
 
-    <h2>C2N: Your Fashion Destination</h2>
+        <h2><a href="https://c2nshop.com/" style="text-decoration: none; color: white;">C2N: Your Fashion Destination</a></h2>
     <h3>C2N, a proud subsidiary of Bvaunk, is a premier retail clothing store that caters to fashion enthusiasts
         worldwide. With a focus on quality, style, and affordability, C2N offers a wide range of trendy apparel and
         accessories for men and women. From casual wear to formal attire, C2N is your go-to destination for all your
@@ -154,17 +135,15 @@
         journey of innovation and success as we continue to redefine industries and create value for our stakeholders
         worldwide.</h4>
 
-    <footer style="text-align: center;">
+    <footer>
         <div class="footer-line"></div>
         <div class="footer-heading">
-            <h2>B V A U N K</h2>
+             <a href="index.html"><h2>B V A U N K</h2></a>
         </div>
-        <p style="text-align: center;">&copy; 2024 Bvaunk. All rights reserved.</p>
-        <a href="PrivacyPolicy.html">Privacy Policy</a>
-        <a href="Support.html">Support</a>
-        <p style="text-align: center;">The materials on this website are for illustration and discussion purposes only
-            and do not constitute an offering. An offering may be made only by delivery of a confidential offering
-            memorandum to appropriate investors. PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.</p>
+        <p>&copy; 2024 Bvaunk. All rights reserved.</p>
+        <p>The materials on this website are for illustration and discussion purposes only and do not constitute an
+            offering. An offering may be made only by delivery of a confidential offering memorandum to appropriate
+            investors. PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.</p>
     </footer>
 
 </body>
