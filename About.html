@@ -1,151 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon"
-        href="https://firebasestorage.googleapis.com/v0/b/bvaunk-70508.appspot.com/o/iwthout_bg.png?alt=media&token=7f2a8b2c-a15a-4d13-9a8f-2551205082a6"
-        type="image/x-icon">
     <title>About bvaunk page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css" rel="stylesheet">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
+        :root {
+            --primary-color: #ffffff;
+            --background-color: #000000;
+            --accent-color: #333333;
+            --transition-speed: 0.3s;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: white;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+            overflow-x: hidden;
             min-height: 100vh;
             position: relative;
-            padding-bottom: 60px;
-            font-size: 14px;
         }
 
-        h1 {
-            text-align: center;
-            animation: fadeIn 1s ease forwards; /* Animation for the heading */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            transition: all var(--transition-speed) ease;
         }
 
-        h2,
-        h3,
-        h4 {
-            text-align: left;
-            margin-bottom: 10px;
-            padding-left: 40px;
-            opacity: 0; /* Set initial opacity to 0 */
+        header.scrolled {
+            padding: 0.5rem 2rem;
+            background: rgba(0, 0, 0, 0.95);
         }
 
-        h2 {
-            animation: fadeIn 1s ease forwards 0.5s; /* Animation for the first h2 */
-        }
-
-        h3 {
-            animation: fadeIn 1s ease forwards 1s; /* Animation for the first h3 */
-        }
-
-        h4 {
-            animation: fadeIn 1s ease forwards 1.5s; /* Animation for the first h4 */
-        }
-
-        .footer-heading {
+        .header-content {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .footer-heading img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
+        .logo h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
         }
 
-        .footer-line {
-            border-bottom: 1px solid white;
-            margin-bottom: 20px;
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .company-section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .company-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .company-section h3 {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: normal;
+            margin-bottom: 1.5rem;
+        }
+
+        .company-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: opacity var(--transition-speed) ease;
+        }
+
+        .company-section a:hover {
+            opacity: 0.8;
+        }
+
+        .mission-statement {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 1.5s;
         }
 
         footer {
-            margin-top: auto;
-            bottom: 0;
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .footer-heading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-            position: relative;
-            display: inline-block;
-            margin: 0 10px;
+            background: var(--accent-color);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
         }
 
-        footer a+a::before {
-            content: '|';
-            margin-right: 23px;
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                /* Start with 0 opacity */
             }
-
             to {
                 opacity: 1;
-                /* End with full opacity */
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .company-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .company-section h3 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .company-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .company-section h3 {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
-
 <body>
-    <h1>About Us</h1>
-    <h3>Bvaunk is a leading global conglomerate, comprising several innovative and dynamic companies at the forefront of
-        their respective industries. With a commitment to excellence, creativity, and sustainability, Bvaunk is
-        dedicated to shaping the future through its diverse portfolio of businesses.</h3>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h4>B V A U N K</h4>
+            </div>
+        </div>
+    </header>
 
-        <h2><a href="https://c2nshop.com/" style="text-decoration: none; color: white;">C2N: Your Fashion Destination</a></h2>
-    <h3>C2N, a proud subsidiary of Bvaunk, is a premier retail clothing store that caters to fashion enthusiasts
-        worldwide. With a focus on quality, style, and affordability, C2N offers a wide range of trendy apparel and
-        accessories for men and women. From casual wear to formal attire, C2N is your go-to destination for all your
-        fashion needs.</h3>
+    <main>
+        <h1 class="section-title">About Us</h1>
 
-    <h2>Ecomodation: Redefining Living Spaces</h2>
-    <h3>Ecomodation, a cutting-edge venture under the Bvaunk umbrella, is revolutionizing the way people find and rent
-        apartments. Our user-friendly app connects tenants with a diverse range of rental properties, making the process
-        of finding a new home seamless and convenient. With Ecomodation, finding your ideal living space has never been
-        easier.</h3>
+        <div class="company-section">
+            <h3>Bvaunk is a leading global conglomerate, comprising several innovative and dynamic companies at the forefront of
+                their respective industries. With a commitment to excellence, creativity, and sustainability, Bvaunk is
+                dedicated to shaping the future through its diverse portfolio of businesses.</h3>
+        </div>
 
-    <h2>Rinvest: Empowering Financial Success</h2>
-    <h3>Rinvest, a flagship company of Bvaunk, is a leading investment management firm that leverages statistical
-        analysis and fundamental research to navigate the global financial markets. Our team of experts employs
-        sophisticated strategies to optimize returns and manage risk effectively. Whether you're an individual investor
-        or an institutional client, Rinvest is committed to helping you achieve your financial goals.</h3>
+        <div class="company-section">
+            <h2><a href="https://c2nshop.com/">C2N: Your Fashion Destination</a></h2>
+            <h3>C2N, a proud subsidiary of Bvaunk, is a premier retail clothing store that caters to fashion enthusiasts
+                worldwide. With a focus on quality, style, and affordability, C2N offers a wide range of trendy apparel and
+                accessories for men and women. From casual wear to formal attire, C2N is your go-to destination for all your
+                fashion needs.</h3>
+        </div>
 
-    <h4>At Bvaunk, we are driven by innovation, integrity, and a passion for excellence. Through our diverse businesses,
-        we strive to make a positive impact on people's lives and contribute to a sustainable future. Join us on this
-        journey of innovation and success as we continue to redefine industries and create value for our stakeholders
-        worldwide.</h4>
+        <div class="company-section">
+            <h2>Ecomodation: Redefining Living Spaces</h2>
+            <h3>Ecomodation, a cutting-edge venture under the Bvaunk umbrella, is revolutionizing the way people find and rent
+                apartments. Our user-friendly app connects tenants with a diverse range of rental properties, making the process
+                of finding a new home seamless and convenient. With Ecomodation, finding your ideal living space has never been
+                easier.</h3>
+        </div>
+
+        <div class="company-section">
+            <h2>Rinvest: Empowering Financial Success</h2>
+            <h3>Rinvest, a flagship company of Bvaunk, is a leading investment management firm that leverages statistical
+                analysis and fundamental research to navigate the global financial markets. Our team of experts employs
+                sophisticated strategies to optimize returns and manage risk effectively. Whether you're an individual investor
+                or an institutional client, Rinvest is committed to helping you achieve your financial goals.</h3>
+        </div>
+
+        <div class="mission-statement">
+            At Bvaunk, we are driven by innovation, integrity, and a passion for excellence. Through our diverse businesses,
+            we strive to make a positive impact on people's lives and contribute to a sustainable future. Join us on this
+            journey of innovation and success as we continue to redefine industries and create value for our stakeholders
+            worldwide.
+        </div>
+    </main>
 
     <footer>
-        <div class="footer-line"></div>
-        <div class="footer-heading">
-             <a href="index.html"><h2>B V A U N K</h2></a>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h4>B V A U N K</h4>
+            </div>
+            <div class="footer-text">
+                <p>The materials on this website are for illustration and discussion purposes only and do not constitute an
+                    offering. An offering may be made only by delivery of a confidential offering memorandum to appropriate
+                    investors. PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Bvaunk. All rights reserved.</p>
+            </div>
         </div>
-        <p>&copy; 2024 Bvaunk. All rights reserved.</p>
-        <p>The materials on this website are for illustration and discussion purposes only and do not constitute an
-            offering. An offering may be made only by delivery of a confidential offering memorandum to appropriate
-            investors. PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.</p>
     </footer>
 
+    <script>
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
-
 </html>
