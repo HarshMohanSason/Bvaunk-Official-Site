@@ -11,6 +11,8 @@
             --background-color: #000000;
             --accent-color: #333333;
             --transition-speed: 0.3s;
+            --hover-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -82,31 +84,93 @@
             margin-bottom: 4rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .company-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                var(--hover-bg),
+                transparent
+            );
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .company-section:hover {
+            border-color: var(--border-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .company-section:hover::before {
+            transform: translateX(100%);
         }
 
         .company-section h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #e0e0e0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            transition: all var(--transition-speed) ease;
         }
 
+
+        company-section h2 a:hover {
+            transform: translateX(10px);
+        }
         .company-section h3 {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
             font-weight: normal;
             margin-bottom: 1.5rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .company-section:hover h3 {
+            color: rgba(255, 255, 255, 0.95);
         }
 
         .company-section a {
             color: var(--primary-color);
             text-decoration: none;
-            transition: opacity var(--transition-speed) ease;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+        }
+.company-section h2 a {
+            background: linear-gradient(45deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 3px;
+            transition: transform var(--transition-speed) ease;
         }
 
-        .company-section a:hover {
-            opacity: 0.8;
+        .company-section h2 a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(45deg, #ffffff, #e0e0e0);
+            transition: width var(--transition-speed) ease;
+        }
+
+        .company-section h2 a:hover::after {
+            width: 100%;
         }
 
         .mission-statement {
@@ -117,6 +181,13 @@
             margin-bottom: 4rem;
             opacity: 0;
             animation: fadeIn 1s ease forwards 1.5s;
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .mission-statement:hover {
+            background: var(--hover-bg);
         }
 
         footer {
@@ -178,12 +249,20 @@
                 font-size: 2rem;
             }
 
+            .company-section {
+                padding: 1.5rem;
+            }
+
             .company-section h2 {
                 font-size: 1.5rem;
             }
 
             .company-section h3 {
                 font-size: 1rem;
+            }
+
+            .company-section:hover {
+                transform: translateY(-3px);
             }
         }
 
@@ -199,6 +278,10 @@
 
             .section-title {
                 font-size: 1.8rem;
+            }
+
+            .company-section {
+                padding: 1rem;
             }
 
             .company-section h2 {
@@ -230,7 +313,7 @@
         </div>
 
         <div class="company-section">
-            <h2><a href="https://c2nshop.com/">C2N: Your Fashion Destination</a></h2>
+            <h2><a href="">C2N: Your Fashion Destination</a></h2>
             <h3>C2N, a proud subsidiary of Bvaunk, is a premier retail clothing store that caters to fashion enthusiasts
                 worldwide. With a focus on quality, style, and affordability, C2N offers a wide range of trendy apparel and
                 accessories for men and women. From casual wear to formal attire, C2N is your go-to destination for all your
@@ -238,7 +321,7 @@
         </div>
 
         <div class="company-section">
-            <h2>Ecomodation: Redefining Living Spaces</h2>
+            <h2><a href="">Ecomodation: Redefining Living Spaces</a></h2>
             <h3>Ecomodation, a cutting-edge venture under the Bvaunk umbrella, is revolutionizing the way people find and rent
                 apartments. Our user-friendly app connects tenants with a diverse range of rental properties, making the process
                 of finding a new home seamless and convenient. With Ecomodation, finding your ideal living space has never been
@@ -246,7 +329,7 @@
         </div>
 
         <div class="company-section">
-            <h2>Rinvest: Empowering Financial Success</h2>
+            <h2><a href="">Rinvest: Empowering Financial Success</a></h2>
             <h3>Rinvest, a flagship company of Bvaunk, is a leading investment management firm that leverages statistical
                 analysis and fundamental research to navigate the global financial markets. Our team of experts employs
                 sophisticated strategies to optimize returns and manage risk effectively. Whether you're an individual investor
